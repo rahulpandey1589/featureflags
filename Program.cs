@@ -14,10 +14,12 @@ builder.Services
     .AddFeatureManagement();
 
 builder.Services.AddHttpClient(
-    ApplicationConstants.RegresApi, httpClient =>
-{
-    httpClient.BaseAddress = new Uri("https://reqres.in/api");
-});
+    ApplicationConstants.RegresApi,
+    httpClient =>
+    {
+        var url = "https://reqres.in/api/";
+        httpClient.BaseAddress = new Uri(url);
+    });
 
 
 var app = builder.Build();
